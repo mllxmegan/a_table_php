@@ -44,16 +44,14 @@
         //     $dbco->exec($table_Flasher);
         //     echo 'Table bien créée !';
             }
-        //     EXECUTE LA COMMANDE exec EN CHANGEANT A CHAQUE FOIS TA TABLE PUIS ACTUALISE LE FICHIER SUR TON NAVIGATEUR POUR CREER LA TABLE EN QUESTION. REPETE CA
-        // CHAQUE TABLE QUE TU POSSEDES
             catch(PDOException $e){
             echo "Erreur : " . $e->getMessage();
             }
-        //     CALCUL LE NOMBRE TOTAL DE CLIENTS
+
             $nbre_client_total = "
             SELECT COUNT(id_client) AS nbre_client FROM client
     ";   
-        //     CALCUL LE NOMBRE DE CLIENT/JOUR ET PAR MOIS
+
                 $nbre_de_clients_par_jour = "
                 SELECT DISTINCT YEAR(date_flash) AS year, MONTH(date_flash) AS month, DAY(date_flash) AS day, COUNT(id_client) AS nbre_client
                 FROM client
@@ -88,19 +86,18 @@
         WHERE date_flash 
         BETWEEN '2021-03-01 00:00:00' 
         AND '2021-03-31 00:00:00'";
-        //NOMBRE DE TABLE AU SOLEIL
+
         $nbre_table_au_soleil = "
         SELECT COUNT(id_table) AS nbre_table_au_soleil 
         FROM table_resto
         WHERE luminosite LIKE 'soleil'
         ";
-        //NOMBRE DE TABLE A L'OMBRE A L'EXTERIEUR
+
         $nbre_table_ombre_exterieur = "
         SELECT COUNT(id_table) AS nbre_table_ombre_exterieur
         FROM table_resto
         WHERE luminosite LIKE 'ombre' AND emplacement LIKE 'exterieur'
         ";
-        // NOMBRE DE TELEPHONE SAMSUNG
         $nbre_telephone_samsung = "
         SELECT COUNT(marque)
         AS nbre_de_telephone_samsung
