@@ -27,5 +27,6 @@
               echo "Erreur : " . $e->getMessage();
             }
         ?>
+        <!-- EXECUTE CE FICHIER POUR CREER LA BDD, PENSE A CHANGER LES USERNAME ET PASSWORD POUR METTRE LES TIENS -->
     </body>
 </html>
