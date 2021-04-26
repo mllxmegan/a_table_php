@@ -41,7 +41,12 @@
                     id_flash INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
                     date_flash DATETIME NOT NULL)";
 
-        //     $dbco->exec($table_Flasher);
+            $dbco->exec($table_Table);
+            $dbco->exec($table_QrCode);
+            $dbco->exec($table_Client);
+            $dbco->exec($table_Smartphone);
+            $dbco->exec($table_Flasher);
+
         //     echo 'Table bien créée !';
             }
             catch(PDOException $e){
